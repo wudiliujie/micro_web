@@ -1,4 +1,4 @@
-package main
+package sqlmake
 
 import (
 	"encoding/xml"

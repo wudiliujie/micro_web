@@ -12,6 +12,12 @@ func build(sid ServerID) {
 	//buildDispatcher()
 	//buildGate()
 }
+func buildAll(){
+	for _,server := range  env.Services{
+		build(ServerID(server))
+	}
+}
+
 
 func buildServer(sid ServerID) {
 	serverPath :=sid.Path()
@@ -19,7 +25,7 @@ func buildServer(sid ServerID) {
 	if !isdir(serverPath) {
 		showMsgAndQuit("wrong server id: %s, using '\\' instead of '/'?", sid)
 	}
-	targetName:=env.GetCmdDir()+"\\"+sid.Name()+BinaryExtension
+	targetName:=env.BinRoot+"\\"+sid.Name()+BinaryExtension
 	showMsg("go build %s ...", sid)
 	buildDirectory(serverPath,targetName)
 }

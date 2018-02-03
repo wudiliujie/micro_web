@@ -5,12 +5,13 @@ import (
 	"log"
 	"strings"
 
-	 account "account_svr/proto/account"
+	account "micro_web/svr_account/proto/account"
 	"github.com/micro/go-micro"
 	"github.com/micro/go-micro/errors"
 	api "github.com/micro/micro/api/proto"
 
 	"golang.org/x/net/context"
+	"time"
 )
 
 type Accountapi struct {
@@ -50,6 +51,8 @@ func (s *Accountapi) Login(ctx context.Context, req *api.Request, rsp *api.Respo
 func main() {
 	service := micro.NewService(
 		micro.Name("go.micro.api.account"),
+		micro.RegisterTTL(time.Second*30),
+		micro.RegisterInterval(time.Second*10),
 	)
 
 	// parse command line flags

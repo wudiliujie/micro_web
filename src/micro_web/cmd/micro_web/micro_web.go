@@ -40,7 +40,8 @@ func main() {
 	}
 
 	if cmd == "build" {
-		build(ServerID(args[1]))
+		//build(ServerID(args[1]))
+		buildAll()
 	} else if cmd == "start" {
 		start(ServerID(args[1]))
 	}/* else if cmd == "stop" {

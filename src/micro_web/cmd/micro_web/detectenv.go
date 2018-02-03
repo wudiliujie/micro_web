@@ -6,11 +6,15 @@ import (
 	"strings"
 
 	"github.com/xiaonanln/goworld/engine/config"
+	"io/ioutil"
+	"fmt"
 )
 
 // Env represents environment variables
 type Env struct {
 	MicroWebRoot string
+	BinRoot string
+	Services []string
 }
 
 // GetDispatcherDir returns the path to the dispatcher
@@ -62,14 +66,31 @@ func detectGoWorldPath() {
 		goworldPath := filepath.Join(sp, "src", "micro_web")
 		if isdir(goworldPath) {
 			env.MicroWebRoot = goworldPath
+			env.BinRoot=filepath.Join(sp, "bin")
 			break
 		}
 	}
 	if env.MicroWebRoot == "" {
-		showMsgAndQuit("goworld directory is not detected")
+		showMsgAndQuit("micro_web directory is not detected")
 	}
 
 	showMsg("microweb directory found: %s", env.MicroWebRoot)
+	//查找左右的服务和api
+	dir, err := ioutil.ReadDir(env.MicroWebRoot)
+	if(err!=nil){
+		checkErrorOrQuit(err,"搜索路径错误")
+	}
+	for _,file:=range dir{
+		if file.IsDir() {
+			str:=strings.Split(file.Name(),"_");
+			if len(str)>=2{
+				if str[0]=="api" ||  str[0]=="svr"{
+					env.Services= append(env.Services, file.Name())
+				}
+			}
+			fmt.Println( file.Name());
+		}
+	}
 	configFile := filepath.Join(env.MicroWebRoot, "goworld.ini")
 	config.SetConfigFile(configFile)
 	//config.Get()

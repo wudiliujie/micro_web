@@ -70,7 +70,7 @@ func main() {
 		return nil
 	}
 	service := micro.NewService(
-		micro.Name(consts.API_NAME_SHORTMSG),
+		micro.Name(consts.SVR_NAME_SHORTMSG),
 		micro.RegisterTTL(time.Second*30),
 		micro.RegisterInterval(time.Second*10),
 		micro.AfterStart(afterStart),

@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	account "micro_web/account_svr/proto/account"
-	"micro_web/account_svr/db"
+	account "micro_web/svr_account/proto/account"
+	 db "micro_web/svr_account/db"
 	"github.com/micro/go-micro"
 	"golang.org/x/net/context"
 	db2 "micro_web/db"
