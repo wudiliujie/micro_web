@@ -1,0 +1,18 @@
+info 18:23:16.657803 shortmsg.go:64: 启动成功
+info 18:23:16.679803 shortmsg.go:83: shortmsg:success
+info 18:23:16.681303 log.go:20: Listening on [::]:57352
+info 18:23:16.682303 log.go:20: Broker Listening on [::]:57353
+info 18:23:16.684303 log.go:20: Registering node: yxl.micro.api.shortmsg-1517616e-0803-11e8-8622-1c1b0d5c088a
+info 18:23:16.691303 shortmsg.go:69: >>START_SUCCESS<<
+info 18:24:02.202303 shortmsg.go:64: 启动成功
+info 18:24:02.248803 shortmsg.go:83: shortmsg:success
+info 18:24:02.250303 log.go:20: Listening on [::]:57471
+info 18:24:02.251803 log.go:20: Broker Listening on [::]:57472
+info 18:24:02.254303 log.go:20: Registering node: yxl.micro.api.shortmsg-303cd7ee-0803-11e8-a2bc-1c1b0d5c088a
+info 18:24:02.262303 shortmsg.go:69: >>START_SUCCESS<<
+info 18:25:32.156303 shortmsg.go:64: 启动成功
+info 18:25:32.180303 shortmsg.go:83: shortmsg:success
+info 18:25:32.181803 log.go:20: Listening on [::]:57696
+info 18:25:32.183303 log.go:20: Broker Listening on [::]:57697
+info 18:25:32.184803 log.go:20: Registering node: yxl.micro.api.shortmsg-65dabc0e-0803-11e8-afda-1c1b0d5c088a
+info 18:25:32.192303 shortmsg.go:69: >>START_SUCCESS<<

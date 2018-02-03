@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package yxl.micro.srv.account;
+
+service Account {
+	rpc Login(LoginRequest) returns (LoginResponse) {}
+	rpc GameLogin(GameLoginRequest) returns (GameLoginResponse) {}
+}
+
+message LoginRequest {
+	string name = 1;
+	string pass = 2;
+}
+
+message LoginResponse {
+	string msg = 1;
+}
+
+message GameLoginRequest {
+    int32 appid = 1;
+	string name = 2;
+	string pass = 3;
+}
+
+message GameLoginResponse {
+	string msg = 1;
+}

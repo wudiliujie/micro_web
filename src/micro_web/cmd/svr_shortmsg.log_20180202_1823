@@ -1,0 +1,7 @@
+info 18:16:53.862803 shortmsg.go:64: 启动成功
+info 18:16:53.887803 shortmsg.go:83: shortmsg:success
+info 18:17:02.277303 log.go:20: Listening on [::]:56408
+info 18:17:02.281303 log.go:20: Broker Listening on [::]:56409
+info 18:17:02.286303 log.go:20: Registering node: yxl.micro.api.shortmsg-30ed7fbe-0802-11e8-bad9-1c1b0d5c088a
+info 18:17:02.299303 shortmsg.go:69: >>START_SUCCESS<<
+info 18:18:46.370303 log.go:20: Deregistering node: yxl.micro.api.shortmsg-30ed7fbe-0802-11e8-bad9-1c1b0d5c088a

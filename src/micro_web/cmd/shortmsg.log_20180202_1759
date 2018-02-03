@@ -1,0 +1,4 @@
+17:57:14.545303 log.go:20: Listening on [::]:52546
+17:57:14.552303 log.go:20: Broker Listening on [::]:52547
+17:57:14.554803 log.go:20: Registering node: yxl.micro.srv.shortmsg-71f8c1f6-07ff-11e8-914e-1c1b0d5c088a
+17:59:25.465803 log.go:20: Deregistering node: yxl.micro.srv.shortmsg-71f8c1f6-07ff-11e8-914e-1c1b0d5c088a

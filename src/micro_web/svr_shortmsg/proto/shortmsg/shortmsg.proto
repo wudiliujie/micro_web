@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package yxl.micro.srv.shortmsg;
+
+service Shortmsg {
+    //获取注册验证码
+	rpc GetRegisterCode(GetRegisterCodeReq) returns (GetRegisterCodeRep) {}
+	//发送验证码
+	rpc SendRegisterCode(SendRegisterCodeReq) returns (SendRegisterCodeRep) {}
+}
+
+message GetRegisterCodeReq {
+ 	int64 phone = 1; //手机号
+ }
+ message GetRegisterCodeRep {
+     int32 tag = 1;  //结果
+     int32 code = 2;  //验证码
+ }
+
+ message SendRegisterCodeReq {
+ 	int64 phone = 1; //手机号
+ }
+ message SendRegisterCodeRep {
+     int32 tag = 1;  //结果
+ }

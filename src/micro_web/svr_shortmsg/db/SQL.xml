@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqls>
+    <model n="RegisterShortMsgInfo" d="短信信息">
+        <p n="Phone" t="int64" m="phone" d="手机号码" />
+        <p n="Code" t="int" m="code"  d="验证码"/>
+        <p n="SendTime" t="time.Time" m="code"  d="发送时间"/>
+        <p n="Status" t="int" m="code"  d="状态"/>
+    </model>
+
+    <sql t="Q" n="GetRegisterShortMsgInfo" s="select phone,code,sendtime,status from tab_register_shortmsg where id =?" d="获取注册手机短信发送信息" out="RegisterShortMsgInfo">
+        <p n="phone" t="int64" d="手机号码" />
+    </sql>
+    <sql t="E" n="InsertRegisterShortMsgInfo" s="insert into tab_register_shortmsg (phone,code,sendtime,status) values(?,?,?,?) " d="插入注册记录" out="int">
+        <p n="Phone" t="int64" m="phone" d="手机号码" />
+        <p n="Code" t="int" m="code"  d="验证码"/>
+        <p n="SendTime" t="time.Time" m="code"  d="发送时间"/>
+        <p n="Status" t="int" m="code"  d="状态"/>
+    </sql>
+    <sql t="E" n="UpdateRegisterShortMsgInfo" s="update tab_register_shortmsg  set code=?,sendtime=?,status=? where phone=?  " d="插入注册记录" out="int">
+        <p n="Code" t="int" m="code"  d="验证码"/>
+        <p n="SendTime" t="time.Time" m="code"  d="发送时间"/>
+        <p n="Status" t="int" m="code"  d="状态"/>
+        <p n="Phone" t="int64" m="phone" d="手机号码" />
+    </sql>
+</sqls>

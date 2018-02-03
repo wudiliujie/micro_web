@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sqls>
+    <model n="UserInfo" d="用户信息">
+        <p n="Id" t="int" m="id" />
+        <p n="UserName" t="string" m="username" />
+        <p n="UserPass" t="string" m="userpass" />
+    </model>
+    <model n="GameInfo" d="用户信息">
+        <p n="Id" t="int" m="id" />
+        <p n="UserName" t="string" m="username" />
+        <p n="UserPass" t="string" m="userpass" />
+    </model>
+    <sql t="Q" n="GetAllUserAccount" s="select id,username,userpass from user_account limit ?,?" d="aaa" out="UserInfo" array="true">
+        <p n="pageno" t="int" d="id" />
+        <p n="pagesize" t="int" d="id" />
+    </sql>
+    <sql t="Q" n="GetUserInfo" s="select id,username,userpass as UserPass from user_account where id =?" d="获取单个用户" out="UserInfo">
+        <p n="id" t="int" d="id" />
+    </sql>
+    <sql t="S" n="GetUserCount" s="select count(1) from user_account " d="获取用户数量" out="int">
+    </sql>
+    <model n="LogOnlineInfo" d="用户信息">
+        <p n="Id" t="int" />
+        <p n="AppId" t="int" />
+        <p n="LogTime" t="time.Time"  />
+        <p n="Online" t="int"  />
+    </model>
+    <sql t="Q" n="GetLogOnlineInfo" s="select appid,logtime,online from log_online where datediff(d,logtime,?)=0" d="获取在线日志" out="LogOnlineInfo" array="true">
+        <p n="date" t="time.Time" d="查询日期" />
+    </sql>
+</sqls>
