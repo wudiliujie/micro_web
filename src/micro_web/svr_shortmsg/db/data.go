@@ -11,14 +11,12 @@ type RegisterShortMsgInfo struct {
 func GetRegisterShortMsgInfo(phone int64)(ret RegisterShortMsgInfo)   {
 	var m RegisterShortMsgInfo
 	db := db.G_dbmanage.GetDB();
-	rows,err := db.Query("select phone,code,sendtime,status from tab_register_shortmsg where id =?",phone)
+	rows,err := db.Query("select phone,code,sendtime,status from tab_register_shortmsg where phone =?",phone)
 	core.Check(err);
 	defer rows.Close();
 	var refs []interface{};
 	refs = append(refs, &m.Phone)
 	refs = append(refs, &m.Code)
-	refs = append(refs, &m.SendTime)
-	refs = append(refs, &m.Status)
 	refs = append(refs, &m.SendTime)
 	refs = append(refs, &m.Status)
 	for rows.Next() {

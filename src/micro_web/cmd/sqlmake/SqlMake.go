@@ -1,4 +1,4 @@
-package sqlmake
+package main
 
 import (
 	"encoding/xml"
@@ -8,7 +8,7 @@ import (
 	"os"
 	"fmt"
 	"io"
-	"core"
+	"micro_web/core"
 	"github.com/pkg/errors"
 
 
@@ -146,8 +146,8 @@ func  MakeGo(file string,target string)  {
 	log.Println(result)
 	var writer Writer;
 	writer.AddLine("package db");
-	writer.AddLine("import \"core\"")
-	writer.AddLine("import \"db\"")
+	writer.AddLine("import \"micro_web/core\"")
+	writer.AddLine("import \"micro_web/db\"")
 	writer.AddLine("import \"time\"")
 	for _, model  := range result.Models {
 		writer.AddLine("type "+model.Name+" struct {")

@@ -12,7 +12,7 @@ var G_dbmanage DBManage
 
 func (manage * DBManage)Init()  {
 	var err error
-	manage.db, err = sqlx.Connect("mysql", "root:111111@tcp(127.0.0.1:3306)/mytest?charset=utf8")
+	manage.db, err = sqlx.Connect("mysql", "root:111111@tcp(127.0.0.1:3306)/mytest?charset=utf8&parseTime=true")
 	if err != nil {
 		core.Check(err)
 	}

@@ -13,6 +13,7 @@ import (
 	"math/rand"
 	"fmt"
 	"micro_web/consts"
+
 )
 
 type ShortMsgSvr struct{}
@@ -60,7 +61,8 @@ func (s *ShortMsgSvr) SendRegisterCode(ctx context.Context, req *shortmsg.SendRe
 
 func main() {
 	fmt.Println("启动")
-	core.Config(core.GetCurrentPath()+"\\svr_shortmsg.log",core.DebugLevel)
+
+
 	core.Infof("启动成功")
 	fmt.Println("配置文件")
 	db2.G_dbmanage.Init();
